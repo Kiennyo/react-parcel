@@ -4,7 +4,8 @@ import App from "./App";
 
 describe("App", () => {
     it("Test render", () => {
-        TestRenderer.create(<App />);
-        expect(2+2).toBe(4);
+        const r = TestRenderer.create(<App />);
+        const h1 = r.root.findByType("h1");
+        expect(h1.props.children).toBe("Hello!")
     })
 })
